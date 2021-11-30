@@ -9,7 +9,8 @@ namespace School.DataBase
 	{
 		public SchoolContext Create()
 		{
-			return new SchoolContext(@"Data Source=BASE\SQLEXPRESS;Initial Catalog=School;Integrated Security=True");
+			// return new SchoolContext(@"Data Source=BASE\SQLEXPRESS;Initial Catalog=School;Integrated Security=True");
+			return new SchoolContext(@"Data Source=PTR\SQLEXPRESS;Initial Catalog=School;Integrated Security=True");
 		}
 	}
 }

@@ -1,8 +1,6 @@
 ﻿using School.DataBase;
 using School.Domain;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace School.Repository
 {
@@ -22,18 +20,13 @@ namespace School.Repository
 			schoolContext.SaveChangesAsync();
 		}
 
-		public void Delete(Guid id)
+        public void Delete(T item)
 		{
-			Delete(new T { Id = id });
-		}
+			schoolContext.Set<T>().Attach(item);
 
-		public void Delete(T t)
-		{
-			schoolContext.Set<T>().Attach(t);
+			schoolContext.Set<T>().Remove(item);
 
-			schoolContext.Set<T>().Remove(t);
-
-			schoolContext.SaveChangesAsync();
+			schoolContext.SaveChanges();
 		}
 
 		public IEnumerable<T> GetAll()

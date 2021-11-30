@@ -1,6 +1,8 @@
 ﻿using School.DataBase;
+using School.Domain;
 using School.Repository;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
@@ -30,36 +32,37 @@ namespace School
 				Console.WriteLine(item);
 			}
 
-			repo.Delete(repo.GetAll().ElementAt(0).Id);
 
-			//List<Grade> grades = new()
-			//{
-			//	new Grade { Id = Guid.NewGuid(), Value = 5, Subject = "Math" },
-			//	new Grade { Id = Guid.NewGuid(), Value = 7, Subject = "Biology" },
-			//	new Grade { Id = Guid.NewGuid(), Value = 4, Subject = "Chemistry" },
-			//	new Grade { Id = Guid.NewGuid(), Value = 10, Subject = "Physics" },
-			//	new Grade { Id = Guid.NewGuid(), Value = 10, Subject = "Computer Science" }
-			//};
+           // repo.Delete(repo.GetAll().ElementAt(0).Id);
 
-			//List<Teacher> teachers = new()
-			//{
-			//	new Teacher { Id = Guid.NewGuid(), FirstName = "Steve", LastName = "Jobs", Students = null },
-			//	new Teacher { Id = Guid.NewGuid(), FirstName = "Abhimanyu", LastName = "Vatsa", Students = null }
-			//};
+            //List<Grade> grades = new()
+            //{
+            //    new Grade { Id = Guid.NewGuid(), Value = 5, Subject = "Math" },
+            //    new Grade { Id = Guid.NewGuid(), Value = 7, Subject = "Biology" },
+            //    new Grade { Id = Guid.NewGuid(), Value = 4, Subject = "Chemistry" },
+            //    new Grade { Id = Guid.NewGuid(), Value = 10, Subject = "Physics" },
+            //    new Grade { Id = Guid.NewGuid(), Value = 10, Subject = "Computer Science" }
+            //};
 
-			//List<Student> students = new()
-			//{
-			//	new Student { Id = Guid.NewGuid(), FirstName = "Student0", LastName = "Stu0", Teachers = teachers, Grades = new List<Grade> { grades[0], grades[1] } },
-			//	new Student { Id = Guid.NewGuid(), FirstName = "Student1", LastName = "Stu1", Teachers = teachers, Grades = new List<Grade> { grades[2], grades[3] } }
-			//};
+            //List<Teacher> teachers = new()
+            //{
+            //    new Teacher { Id = Guid.NewGuid(), FirstName = "Steve", LastName = "Jobs", Students = null },
+            //    new Teacher { Id = Guid.NewGuid(), FirstName = "Abhimanyu", LastName = "Vatsa", Students = null }
+            //};
 
-			//schoolContext.Grades.AddRange(grades);
+            //List<Student> students = new()
+            //{
+            //    new Student { Id = Guid.NewGuid(), FirstName = "Student0", LastName = "Stu0", Teachers = teachers, Grades = new List<Grade> { grades[0], grades[1] } },
+            //    new Student { Id = Guid.NewGuid(), FirstName = "Student1", LastName = "Stu1", Teachers = teachers, Grades = new List<Grade> { grades[2], grades[3] } }
+            //};
 
-			//schoolContext.Teachers.AddRange(teachers);
+            //schoolContext.Grades.AddRange(grades);
 
-			//schoolContext.Students.AddRange(students);
+            //schoolContext.Teachers.AddRange(teachers);
 
-			//schoolContext.SaveChanges();
-		}
+            //schoolContext.Students.AddRange(students);
+
+            //schoolContext.SaveChanges();
+        }
 	}
 }
