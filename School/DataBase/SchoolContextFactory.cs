@@ -1,7 +1,7 @@
-﻿using School.Domain;
-using System.Configuration;
-using System.Data.Entity;
+﻿
 using System.Data.Entity.Infrastructure;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace School.DataBase
 {
@@ -9,8 +9,14 @@ namespace School.DataBase
 	{
 		public SchoolContext Create()
 		{
-			// return new SchoolContext(@"Data Source=BASE\SQLEXPRESS;Initial Catalog=School;Integrated Security=True");
-			return new SchoolContext(@"Data Source=PTR\SQLEXPRESS;Initial Catalog=School;Integrated Security=True");
+			Regex regex = new(@"<add key=\""connection-string"" value=""(?<value>.*)"" \/>");
+
+			string xmlFile = File.ReadAllText("App.config");
+
+			string connectionString = regex.Match(xmlFile).Groups["value"].Value;
+
+			return new SchoolContext(connectionString);
 		}
 	}
 }
+
