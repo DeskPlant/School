@@ -1,5 +1,5 @@
 ﻿using School.UI;
-
+using System;
 
 namespace School
 {
@@ -17,18 +17,38 @@ namespace School
 
         public void Run()
         {
-            
-            while (Running)
-            {
-                try
-                {
-                    int command = UI.ReadCommand();
-                    switch (command)
-                    {
-                        default:
-                            break;
-                    }
 
-
-                }
+			while (Running)
+			{
+				try
+				{
+					int command = Utilities.Utilities.ReadCommand();
+					switch (command)
+					{
+						case 0:
+                            {
+								Running = false;
+								break;
+                            }
+						case 1:
+                            {
+								break;
+                            }
+							
+						default:
+							{
+								Console.WriteLine("No such command.");
+								Console.WriteLine();
+								break;
+							}
+					}
+				}
+				catch (Exception exception)
+				{
+					Console.WriteLine($"Exception caught: {exception.Message}");
+					Console.WriteLine(exception.StackTrace);
+				}
+			}
+		}
+	}
 }

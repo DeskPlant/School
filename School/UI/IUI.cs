@@ -19,5 +19,11 @@ namespace School.UI
             TeacherService = teacherService;
         }
 
+        public void Menu()
+        {
+            Console.WriteLine("0- Exit the menu");
+            Console.WriteLine("1-");
+        }
+
 	}
 }

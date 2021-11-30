@@ -34,6 +34,9 @@ namespace School.Service
            return Repository.GetAll();
         }
 
-
+        public T Get(Guid id)
+        {
+            return Repository.Get(id);
+        }
     }
 }

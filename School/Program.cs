@@ -23,9 +23,11 @@ namespace School
 
 		public static void Main()
 		{
-			SchoolContext schoolContext = new(ConnectionString);
+            System.Console.ForegroundColor = System.ConsoleColor.Magenta;
+            SchoolContext schoolContext = new(ConnectionString);
 
 			TeacherRepository repo = new(schoolContext);
+
 
 			foreach (var item in repo.GetAll())
 			{

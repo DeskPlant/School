@@ -1,6 +1,8 @@
 ﻿using School.DataBase;
 using School.Domain;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace School.Repository
 {
@@ -33,5 +35,10 @@ namespace School.Repository
 		{
 			return schoolContext.Set<T>().AsNoTracking();
 		}
+
+		public T Get(Guid id)
+        {
+			return schoolContext.Set<T>().FirstOrDefault(item => item.Id == id);
+        }
 	}
 }
